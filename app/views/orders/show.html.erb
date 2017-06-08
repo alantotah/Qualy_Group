@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Order #<%= @order.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Order date</dt>
+      <dd><%= @order.order_date %></dd>
+
+      <dt>Total price</dt>
+      <dd><%= @order.total_price %></dd>
+
+      <dt>User</dt>
+      <dd><%= current_user.nombre_empresa %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/orders" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/orders/<%= @order.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_order/<%= @order.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

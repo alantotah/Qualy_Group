@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @fabric.errors.any? %>
+  <% @fabric.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Fabric</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_fabric" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for diseno -->
+      <div class="form-group">
+        <label for="diseno" class="control-label">
+          Diseno
+        </label>
+
+        <input type="text" id="diseno" name="diseno" placeholder="Diseno" class="form-control" value="<%= @fabric.diseno %>">
+      </div>
+
+      <!-- Label and input for peso -->
+      <div class="form-group">
+        <label for="peso" class="control-label">
+          Peso
+        </label>
+
+        <input type="text" id="peso" name="peso" placeholder="Peso" class="form-control" value="<%= @fabric.peso %>">
+      </div>
+
+      <!-- Label and input for ancho -->
+      <div class="form-group">
+        <label for="ancho" class="control-label">
+          Ancho
+        </label>
+
+        <input type="text" id="ancho" name="ancho" placeholder="Ancho" class="form-control" value="<%= @fabric.ancho %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Fabric
+      </button>
+      or
+      <a href="/fabrics">Cancel</a>
+    </form>
+  </div>
+</div>

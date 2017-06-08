@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Fabrics in orders
+    <a href="/fabrics_in_orders/new" class="btn btn-lg btn-success">New Fabrics in order</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Order</th>
+        <th>Fabric</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @fabrics_in_orders.each do |fabrics_in_order| %>
+      <tr>
+        <td><%= fabrics_in_order.order_id %></td>
+        <td><%= fabrics_in_order.fabric_id %></td>
+        <td>
+          <a href="/fabrics_in_orders/<%= fabrics_in_order.id %>" class="btn btn-primary">Show</a>
+          <a href="/fabrics_in_orders/<%= fabrics_in_order.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_fabrics_in_order/<%= fabrics_in_order.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
