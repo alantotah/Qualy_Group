@@ -5,6 +5,9 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
+      <dt>Order Number</dt>
+      <dd><%= @order.id %></dd>
+
       <dt>Order date</dt>
       <dd><%= @order.order_date %></dd>
 
@@ -12,7 +15,7 @@
       <dd><%= @order.total_price %></dd>
 
       <dt>User</dt>
-      <dd><%= current_user.nombre_empresa %></dd>
+      <dd><%= current_user.nombre %></dd>
 
     </dl>
 
