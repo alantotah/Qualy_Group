@@ -59,7 +59,7 @@ Rails.application.routes.draw do
   # DELETE
   get "/delete_fabric/:id", :controller => "fabrics", :action => "destroy"
   #------------------------------
-  root to: "orders#index"
+  root to: "fabrics#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # Routes for the user resource:
   # READ
