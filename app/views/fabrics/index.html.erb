@@ -5,6 +5,29 @@
   </h1>
 </div>
 
+<%= search_form_for @q do |f| %>
+<p class="lead">Narrow results:</p>
+
+<div class="form-group">
+  <%= f.label :diseno_cont, "Diseno" %>
+  <%= f.text_field :diseno_cont, :class => "form-control", :placeholder => "Enter a few characters" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :peso_eq, "Peso" %>
+  <%= f.text_field :peso_eq, :class => "form-control", :placeholder => "Year greater than or equal to" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :ancho_eq, "Ancho" %>
+  <%= f.text_field :ancho_eq, :class => "form-control", :placeholder => "Year less than or equal to" %>
+</div>
+
+<%= f.submit :class => "btn btn-primary btn-block" %>
+
+<a href="/fabrics" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
+
 <div class="row">
   <div class="col-md-12">
     <table class="table table-striped table-hover">
@@ -12,7 +35,9 @@
         <th>Diseno</th>
         <th>Peso</th>
         <th>Ancho</th>
-        <th>Actions</th>
+        <th>Precio</th>
+        <th></th>
+
       </tr>
 
       <% @fabrics.each do |fabric| %>
@@ -20,10 +45,12 @@
         <td><%= fabric.diseno %></td>
         <td><%= fabric.peso %></td>
         <td><%= fabric.ancho %></td>
+        <td><%= fabric.id %></td>
         <td>
           <a href="/fabrics/<%= fabric.id %>" class="btn btn-primary">Show</a>
-          <a href="/fabrics/<%= fabric.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_fabric/<%= fabric.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="#" class="btn btn-default">Add to Order</a>
+          <!-- <a href="/fabrics/<%= fabric.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_fabric/<%= fabric.id %>" class="btn btn-danger" rel="nofollow">Delete</a> -->
         </td>
       </tr>
       <% end %>

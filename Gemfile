@@ -5,6 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+gem 'ransack'
+
+gem 'ffaker'
 gem "starter_generators", :git => "https://github.com/raghubetina/starter_generators"
 gem "devise"
 

@@ -1,69 +1,70 @@
 class FabricsController < ApplicationController
   def index
-    @fabrics = Fabric.all
+    @q = Fabric.ransack(params[:q])
+    @fabrics = @q.result
+  
+  render("fabrics/index.html.erb")
+end
 
-    render("fabrics/index.html.erb")
-  end
+def show
+  @fabric = Fabric.find(params[:id])
 
-  def show
-    @fabric = Fabric.find(params[:id])
+  render("fabrics/show.html.erb")
+end
 
-    render("fabrics/show.html.erb")
-  end
+def new
+  @fabric = Fabric.new
 
-  def new
-    @fabric = Fabric.new
+  render("fabrics/new.html.erb")
+end
 
+def create
+  @fabric = Fabric.new
+
+  @fabric.diseno = params[:diseno]
+  @fabric.peso = params[:peso]
+  @fabric.ancho = params[:ancho]
+
+  save_status = @fabric.save
+
+  if save_status == true
+    redirect_to("/fabrics/#{@fabric.id}", :notice => "Fabric created successfully.")
+  else
     render("fabrics/new.html.erb")
   end
+end
 
-  def create
-    @fabric = Fabric.new
+def edit
+  @fabric = Fabric.find(params[:id])
 
-    @fabric.diseno = params[:diseno]
-    @fabric.peso = params[:peso]
-    @fabric.ancho = params[:ancho]
+  render("fabrics/edit.html.erb")
+end
 
-    save_status = @fabric.save
+def update
+  @fabric = Fabric.find(params[:id])
 
-    if save_status == true
-      redirect_to("/fabrics/#{@fabric.id}", :notice => "Fabric created successfully.")
-    else
-      render("fabrics/new.html.erb")
-    end
-  end
+  @fabric.diseno = params[:diseno]
+  @fabric.peso = params[:peso]
+  @fabric.ancho = params[:ancho]
 
-  def edit
-    @fabric = Fabric.find(params[:id])
+  save_status = @fabric.save
 
+  if save_status == true
+    redirect_to("/fabrics/#{@fabric.id}", :notice => "Fabric updated successfully.")
+  else
     render("fabrics/edit.html.erb")
   end
+end
 
-  def update
-    @fabric = Fabric.find(params[:id])
+def destroy
+  @fabric = Fabric.find(params[:id])
 
-    @fabric.diseno = params[:diseno]
-    @fabric.peso = params[:peso]
-    @fabric.ancho = params[:ancho]
+  @fabric.destroy
 
-    save_status = @fabric.save
-
-    if save_status == true
-      redirect_to("/fabrics/#{@fabric.id}", :notice => "Fabric updated successfully.")
-    else
-      render("fabrics/edit.html.erb")
-    end
+  if URI(request.referer).path == "/fabrics/#{@fabric.id}"
+    redirect_to("/", :notice => "Fabric deleted.")
+  else
+    redirect_to(:back, :notice => "Fabric deleted.")
   end
-
-  def destroy
-    @fabric = Fabric.find(params[:id])
-
-    @fabric.destroy
-
-    if URI(request.referer).path == "/fabrics/#{@fabric.id}"
-      redirect_to("/", :notice => "Fabric deleted.")
-    else
-      redirect_to(:back, :notice => "Fabric deleted.")
-    end
-  end
+end
 end

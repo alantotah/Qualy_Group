@@ -69,4 +69,5 @@ class OrdersController < ApplicationController
       redirect_to(:back, :notice => "Order deleted.")
     end
   end
+
 end

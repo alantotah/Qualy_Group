@@ -5,6 +5,5 @@ class Fabric < ApplicationRecord
   validates :peso, :presence => true
   validates :ancho, :presence => true
 
-
   has_many :fabrics_in_orders, :dependent => :destroy
 end
