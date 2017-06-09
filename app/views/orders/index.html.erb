@@ -13,7 +13,7 @@
         <th>Order date</th>
         <th>Total price</th>
         <th>User</th>
-        <th>Actions</th>
+        <th></th>
 
       </tr>
 
@@ -25,8 +25,8 @@
         <td><%= order.user.nombre %></td>
         <td>
           <a href="/orders/<%= order.id %>" class="btn btn-primary">Show</a>
-          <a href="/orders/<%= order.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_order/<%= order.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/edit_delete" class="btn btn-danger">Edit or Cancel</a>
+          <!-- <a href="/delete_order/<%= order.id %>" class="btn btn-danger" rel="nofollow">Delete</a> -->
         </td>
       </tr>
       <% end %>

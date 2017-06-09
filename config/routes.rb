@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   get "/delete_fabrics_in_order/:id", :controller => "fabrics_in_orders", :action => "destroy"
   #------------------------------
 
+  # Routes for contact resource:
+  # contact
+  get "/contact", :controller => "contact", :action => "form"
+  get "/edit_delete", :controller => "contact", :action => "edit_delete"
+
+  #------------------------------
+
   # Routes for the Order resource:
   # CREATE
   get "/orders/new", :controller => "orders", :action => "new"

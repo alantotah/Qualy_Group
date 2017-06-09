@@ -25,7 +25,7 @@
 
 <%= f.submit :class => "btn btn-primary btn-block" %>
 
-<a href="/fabrics" class="btn btn-default btn-block">Clear filters</a>
+<a href="/fabrics" class="btn btn-warning btn-block">Clear filters</a>
 <% end %>
 
 <div class="row">
@@ -48,7 +48,7 @@
         <td><%= fabric.id %></td>
         <td>
           <a href="/fabrics/<%= fabric.id %>" class="btn btn-primary">Show</a>
-          <a href="#" class="btn btn-default">Add to Order</a>
+          <a href="#" class="btn btn-warning">Add to Order</a>
           <!-- <a href="/fabrics/<%= fabric.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_fabric/<%= fabric.id %>" class="btn btn-danger" rel="nofollow">Delete</a> -->
         </td>
