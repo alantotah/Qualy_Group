@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
     Orders
-    <a href="/orders/new" class="btn btn-lg btn-success">New Order</a>
+    <a href="/orders/new" class="btn btn-lg btn-primary">New Order</a>
   </h1>
 </div>
 
@@ -25,7 +25,7 @@
         <td><%= order.user.nombre %></td>
         <td>
           <a href="/orders/<%= order.id %>" class="btn btn-primary">Show</a>
-          <a href="/edit_delete" class="btn btn-danger">Edit or Cancel</a>
+          <a href="/edit_delete" class="btn btn-warning">Edit or Cancel</a>
           <!-- <a href="/delete_order/<%= order.id %>" class="btn btn-danger" rel="nofollow">Delete</a> -->
         </td>
       </tr>
