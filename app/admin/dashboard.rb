@@ -10,6 +10,18 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+    columns do
+      column do
+        panel "Recent Orders" do
+          ul do
+            Order.all do |post|
+              post.total_price
+            end
+          end
+        end
+      end
+    end
+
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do

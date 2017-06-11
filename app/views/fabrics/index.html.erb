@@ -9,17 +9,22 @@
 
 <div class="form-group">
   <%= f.label :diseno_cont, "Diseno" %>
-  <%= f.text_field :diseno_cont, :class => "form-control", :placeholder => "Enter a few characters" %>
+  <%= f.text_field :diseno_cont, :class => "form-control", :placeholder => "Enter the design you like" %>
 </div>
 
 <div class="form-group">
   <%= f.label :peso_eq, "Peso" %>
-  <%= f.text_field :peso_eq, :class => "form-control", :placeholder => "Year greater than or equal to" %>
+  <%= f.text_field :peso_eq, :class => "form-control", :placeholder => "Enter the desired weight" %>
 </div>
 
 <div class="form-group">
   <%= f.label :ancho_eq, "Ancho" %>
-  <%= f.text_field :ancho_eq, :class => "form-control", :placeholder => "Year less than or equal to" %>
+  <%= f.text_field :ancho_eq, :class => "form-control", :placeholder => "Enter the desired width" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :title_eq, "Precio" %>
+  <%= f.text_field :title_eq, :class => "form-control", :placeholder => "Enter the desired price" %>
 </div>
 
 <%= f.submit :class => "btn btn-primary btn-block" %>
@@ -44,7 +49,7 @@
         <td><%= fabric.diseno %></td>
         <td><%= fabric.peso %></td>
         <td><%= fabric.ancho %></td>
-        <td><%= fabric.id %></td>
+        <td><%= fabric.title %></td>
         <td>
           <a href="/fabrics/<%= fabric.id %>" class="btn btn-primary">Show</a>
           <a href="#" class="btn btn-warning">Add to Order</a>

@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   # Routes for contact resource:
   # contact
   get "/contact", :controller => "contact", :action => "form"
-  get "/edit_delete", :controller => "contact", :action => "edit_delete"
 
   #------------------------------
 
