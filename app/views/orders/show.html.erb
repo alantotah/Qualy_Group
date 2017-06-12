@@ -18,7 +18,7 @@
       <dd><%= current_user.nombre %></dd>
 
       <dt>Diseno</dt>
-      <dd><%=  %></dd>
+      <dd><%= FabricsInOrder.find_by(:order_id => @order.id).fabric.diseno  %></dd>
 
     </dl>
 

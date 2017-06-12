@@ -27,13 +27,20 @@ class OrdersController < ApplicationController
     @order.total_price = params[:total_price]
     @order.user_id = params[:user_id]
 
-    save_status = @order.save
+    @fabrics_in_order = FabricsInOrder.new
 
+    @fabrics_in_order.fabric_id = params[:fabric_id]
+
+    save_status = @order.save
     if save_status == true
       redirect_to("/orders/#{@order.id}", :notice => "Order created successfully.")
     else
       render("orders/new.html.erb")
+
     end
+    @fabrics_in_order.order_id = @order.id
+    save_status = @fabrics_in_order.save
+
   end
 
   def edit

@@ -27,6 +27,30 @@ User.destroy_all
   puesto: puesto)
 end
 
+# 10.times do
+#   name = FFaker::NameMX.male_name
+#   date = (10..20).to_a.sample.years.ago
+#   price = rand(50...100)
+# end
+#
+# users = User.all
+# orders = Orders.all
+#
+# users.each do |user|
+#   orders.each do |order|
+#     order = Order.new
+#     order.order_date = date
+#     order.total_price = price
+#     order.user_id = user.id
+#     fabrics_in_order = FabricsInOrder.new(order)
+#
+#     fabrics_in_order.fabric_id = rand(1...10)
+#     order.save
+#     fabrics_in_order.order_id = order.id
+#     fabrics_in_order.save
+#   end
+# end
+
 if AdminUser.find_by(email: "admin@example.com")==nil
   AdminUser.create!(email:"admin@example.com", password: "password", password_confirmation: "password")
 end

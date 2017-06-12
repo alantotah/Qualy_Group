@@ -31,7 +31,7 @@
         <label for="total_price" class="control-label">
           Fabric
         </label>
-        <%= select_tag("fabric_id", options_from_collection_for_select(Fabric.all, :id, :diseno, @order.id), :class => "form-control") %>
+        <%= select_tag("fabric_id", options_from_collection_for_select(Fabric.all, :id, :diseno), :class => "form-control") %>
       </div>
 
       <!-- Label and input for total_price -->
