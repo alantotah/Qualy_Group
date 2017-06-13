@@ -38,7 +38,7 @@ users.each do |user|
     order.user_id = user.id
     order.save
     fabrics_in_order = FabricsInOrder.new
-    fabrics_in_order.fabric_id = rand(1...10)
+    fabrics_in_order.fabric_id = rand(1...11)
     fabrics_in_order.order_id = order.id
     fabrics_in_order.save
   end
