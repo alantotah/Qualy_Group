@@ -8,7 +8,7 @@
 require 'ffaker'
 User.destroy_all
 
-10.times do
+50.times do
   name = FFaker::NameMX.male_name
   appellido = FFaker::Name.last_name
   puesto = FFaker::Job.title
@@ -31,7 +31,7 @@ end
 users = User.all
 
 users.each do |user|
-  10.times do
+  50.times do
     order = Order.new
     order.order_date = (10..20).to_a.sample.years.ago
     order.total_price = rand(50...100)
